@@ -170,15 +170,14 @@
         },
       };
       Module.setStatus("Downloading...");
-      window.onerror = function (event) {
-        // TODO: do not warn on ok events like simulating an infinite loop or exitStatus
-        Module.setStatus("Exception thrown, see JavaScript console");
-        spinnerElement.style.display = "none";
-        Module.setStatus = function (text) {
-          if (text) Module.printErr("[post-exception status] " + text);
-        };
-      };
+	  window.onerror = function (event) {
+  	  Module.setStatus("Exception thrown, see JavaScript alert");
+      spinnerElement.style.display = "none";
 
+	  Module.setStatus = function (text) {
+      if (text) alert("[post-exception status] " + text);
+     };
+   };
       // Route URL GET parameters to argc+argv
       if (typeof window === "object") {
         Module['arguments'] = window.location.search.substr(1).trim().split('&');
