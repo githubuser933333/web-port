@@ -175,7 +175,7 @@
         Module.setStatus("Exception thrown, see JavaScript console");
         spinnerElement.style.display = "none";
         Module.setStatus = function (text) {
-          if (text) Module.printErr("[post-exception status] " + text);
+          if (text) alert("[post-exception status] " + text);
         };
       };
 
