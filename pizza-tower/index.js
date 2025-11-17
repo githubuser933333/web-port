@@ -172,6 +172,9 @@
       Module.setStatus("Downloading...");
       window.onerror = function (event) {
         // TODO: do not warn on ok events like simulating an infinite loop or exitStatus
+		Module.setStatus = function (text) {
+          if (text) alert("[post-exception status] " + text);
+        };
         Module.setStatus("Exception thrown, see JavaScript console");
         spinnerElement.style.display = "none";
         Module.setStatus = function (text) {
